@@ -49,6 +49,7 @@
                     android:hint="@string/search_hint"
                     android:imeOptions="actionSearch"
                     android:maxLines="1"
+                    android:inputType="text|textNoSuggestions"
                     android:paddingLeft="@dimen/search_view_text_padding"
                     android:paddingRight="@dimen/search_view_text_padding"
                     android:textAlignment="viewStart"
