@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.speech.RecognizerIntent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -42,6 +43,7 @@ public class MaterialSearchView extends FrameLayout {
     //Views
     private View mSearchLayout;
     private View mTintView;
+    private CardView cvItems;
     private RecyclerView rvItems;
     private EditText etSearch;
     private ImageButton btnBack;
@@ -147,7 +149,7 @@ public class MaterialSearchView extends FrameLayout {
 
         initSearchView();
 
-        rvItems.setVisibility(GONE);
+        cvItems.setVisibility(GONE);
     }
 
     private void initSearchView() {
@@ -338,8 +340,8 @@ public class MaterialSearchView extends FrameLayout {
      * Call {@link #setAdapter(RecyclerView.Adapter)} before calling this.
      */
     public void showSuggestions() {
-        if (adapter != null && adapter.getItemCount() > 0 && rvItems.getVisibility() == GONE) {
-            rvItems.setVisibility(VISIBLE);
+        if (adapter != null && adapter.getItemCount() > 0 && cvItems.getVisibility() == GONE) {
+            cvItems.setVisibility(VISIBLE);
         }
     }
 
@@ -358,8 +360,8 @@ public class MaterialSearchView extends FrameLayout {
      * Dissmiss the suggestions list.
      */
     public void dismissSuggestions() {
-        if (rvItems.getVisibility() == VISIBLE) {
-            rvItems.setVisibility(GONE);
+        if (cvItems.getVisibility() == VISIBLE) {
+            cvItems.setVisibility(GONE);
         }
     }
 
